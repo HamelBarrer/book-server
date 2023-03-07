@@ -45,10 +45,10 @@ model Book {
 
 model Review {
   reviewId      Int      @id @default(autoincrement())
-  User          User     @relation(fields: [userUserId], references: [userId])
-  userUserId    Int
-  Book          Book     @relation(fields: [bookBookId], references: [bookId])
-  bookBookId    Int
+  user          User     @relation(fields: [userId], references: [userId])
+  userId        Int
+  book          Book     @relation(fields: [bookId], references: [bookId])
+  bookId        Int
   qualification Int
   comment       String
   createdAt     DateTime @default(now())

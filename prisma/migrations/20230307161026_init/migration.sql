@@ -33,12 +33,12 @@ CREATE TABLE "Book" (
 -- CreateTable
 CREATE TABLE "Review" (
     "reviewId" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "userUserId" INTEGER NOT NULL,
-    "bookBookId" INTEGER NOT NULL,
+    "userId" INTEGER NOT NULL,
+    "bookId" INTEGER NOT NULL,
     "qualification" INTEGER NOT NULL,
     "comment" TEXT NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    CONSTRAINT "Review_userUserId_fkey" FOREIGN KEY ("userUserId") REFERENCES "User" ("userId") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "Review_bookBookId_fkey" FOREIGN KEY ("bookBookId") REFERENCES "Book" ("bookId") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "Review_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("userId") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Review_bookId_fkey" FOREIGN KEY ("bookId") REFERENCES "Book" ("bookId") ON DELETE RESTRICT ON UPDATE CASCADE
 );
