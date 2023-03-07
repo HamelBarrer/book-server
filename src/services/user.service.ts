@@ -2,6 +2,18 @@ import { PrismaClient } from '@prisma/client';
 import { CreateUser } from '../interfaces/user.interface';
 import { creationHash } from '../utils/hash';
 
+export const readUserEmail = async (email: string) => {
+  const prisma = new PrismaClient();
+
+  const data = await prisma.user.findFirst({
+    where: {
+      email,
+    },
+  });
+
+  return data;
+};
+
 export const readUser = async (userId: number) => {
   const prisma = new PrismaClient();
 
