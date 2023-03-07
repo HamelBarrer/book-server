@@ -14,7 +14,7 @@ CREATE TABLE "User" (
 CREATE TABLE "CategoryBook" (
     "categoryBookId" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- CreateTable

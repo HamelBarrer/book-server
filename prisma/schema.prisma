@@ -27,7 +27,7 @@ model CategoryBook {
   categoryBookId Int      @id @default(autoincrement())
   name           String
   books          Book[]
-  createdAt      DateTime
+  createdAt      DateTime @default(now())
 }
 
 model Book {
