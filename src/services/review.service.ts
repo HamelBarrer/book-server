@@ -5,6 +5,17 @@ export const readReviews = async (bookId: number) => {
   const prisma = new PrismaClient();
 
   const data = await prisma.review.findMany({
+    select: {
+      reviewId: true,
+      user: {
+        select: {
+          firstName: true,
+          lastName: true,
+        },
+      },
+      comment: true,
+      createdAt: true,
+    },
     where: {
       bookId,
     },
